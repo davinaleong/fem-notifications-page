@@ -3,8 +3,6 @@
     - Content
       - Content - General Styling
       - Content - Layout
-      - Content - Card
-      - Content - Forms
     - Utility
       - Utility - Colours
       - Utility - Background Colours
@@ -23,22 +21,19 @@
 
 /** Root **/
 :root {
-  --clr-primary-200: hsl(206, 94%, 87%);
-  --clr-primary-300: hsl(228, 100%, 84%);
-  --clr-primary-400: hsl(243, 100%, 77%);
-  --clr-primary-500: hsl(243, 100%, 62%);
-  --clr-primary-600: hsl(213, 71%, 31%);
-  --clr-primary-700: hsl(213, 96%, 18%);
+  --clr-primary-400: hsl(1, 90%, 64%);
 
-  --clr-secondary-400: hsl(354, 84%, 57%);
+  --clr-secondary-400: hsl(219, 85%, 26%);
 
   --clr-link-400: hsl(228, 45%, 44%);
 
   --clr-neutral-50: hsl(0, 0%, 100%);
-  --clr-neutral-200: hsl(231, 100%, 99%);
-  --clr-neutral-400: hsl(217, 100%, 97%);
-  --clr-neutral-600: hsl(229, 24%, 87%);
-  --clr-neutral-800: hsl(231, 11%, 63%);
+  --clr-neutral-100: hsl(210, 60%, 98%);
+  --clr-neutral-200: hsl(211, 68%, 94%);
+  --clr-neutral-300: hsl(205, 33%, 90%);
+  --clr-neutral-400: hsl(219, 14%, 63%);
+  --clr-neutral-500: hsl(219, 12%, 42%);
+  --clr-neutral-600: hsl(224, 21%, 14%);
 
   --clr-gray-50: hsl(0, 0%, 100%);
   --clr-gray-100: hsl(0, 0%, 90%);
@@ -121,9 +116,6 @@
   --size-v-1100: calc(var(--size-11000) * 1em);
 
   --transition: all 0.3s ease-in-out;
-
-  --height-primary-header: 4.625em;
-  --width-container: 69.375em;
 }
 /** Root - End **/
 
@@ -152,6 +144,12 @@ body {
 .body-grid {
   display: grid;
   place-items: center;
+}
+
+@media screen and (min-width: 45.625em) {
+  .body-grid {
+    padding-block: var(--size-v-600);
+  }
 }
 
 .bg-full {
@@ -213,8 +211,8 @@ b {
 }
 
 a {
-  --clr-link: var(--clr-primary-400);
-  --clr-hover-link: var(--clr-neutral-400);
+  --clr-link: var(--clr-neutral-500);
+  --clr-hover-link: var(--clr-secondary-400);
 
   color: var(--clr-link);
   font-weight: var(--fw-bold);
@@ -223,13 +221,6 @@ a {
 
 a:where(:hover, :focus, :focus-visible) {
   color: var(--clr-hover-link);
-}
-
-.link {
-  --clr-link: var(--clr-neutral-400);
-  --clr-hover-link: var(--clr-neutral-900);
-
-  text-decoration: none;
 }
 
 .attribution {
@@ -284,22 +275,17 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 .btn-link {
-  --btn-clr: var(--clr-neutral-800);
+  --btn-clr: var(--clr-neutral-500);
   --btn-bg-clr: transparent;
   --btn-border-clr: transparent;
 
-  --btn-hover-clr: var(--clr-primary-500);
+  --btn-hover-clr: var(--clr-secondary-400);
   --btn-hover-bg-clr: transparent;
   --btn-hover-border-clr: transparent;
 
   --btn-padding: 0;
 
   text-decoration: none;
-}
-
-.btn-link {
-  padding: 0;
-  text-decoration: underline;
 }
 
 .btn-brand {
@@ -339,6 +325,49 @@ a:where(:hover, :focus, :focus-visible) {
   align-items: center;
 }
 
+.card {
+  --card-width: 45.625em;
+  --card-height: 100vh;
+
+  width: min(100%, var(--card-width));
+  min-height: var(--card-height);
+  padding: var(--size-v-400);
+  border-radius: var(--size-v-200);
+  background-color: var(--clr-neutral-50);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notifications-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--size-v-200);
+}
+
+.badge {
+  --badge-clr: var(--clr-neutral-50);
+  --badge-bg-clr: var(--clr-secondary-400);
+
+  --badge-border-radius: var(--size-v-200);
+  --badge-padding: var(--size-v-100) var(--size-v-400);
+
+  color: var(--badge-clr);
+  background-color: var(--badge-bg-clr);
+  border-radius: var(--badge-border-radius);
+  padding: var(--badge-padding);
+}
+
+@media screen and (min-width: 45.625em) {
+  .card {
+    --card-width: 45.625em;
+    --card-height: calc(100vh - (var(--size-v-600) * 2));
+  }
+}
+
 /** Content - End **/
 
 /** Utility **/
@@ -359,23 +388,8 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 /** Utility - Colours **/
-.text-primary-200 {
-  color: var(--clr-primary-200);
-}
-.text-primary-300 {
-  color: var(--clr-primary-300);
-}
 .text-primary-400 {
   color: var(--clr-primary-400);
-}
-.text-primary-500 {
-  color: var(--clr-primary-500);
-}
-.text-primary-600 {
-  color: var(--clr-primary-600);
-}
-.text-primary-700 {
-  color: var(--clr-primary-700);
 }
 
 .text-secondary-400 {
@@ -389,30 +403,23 @@ a:where(:hover, :focus, :focus-visible) {
 .text-neutral-50 {
   color: var(--clr-neutral-50);
 }
-.text-neutral-200 {
-  color: var(--clr-neutral-200);
-}
-.text-neutral-400 {
-  color: var(--clr-neutral-400);
-}
-.text-neutral-600 {
-  color: var(--clr-neutral-600);
-}
-.text-neutral-800 {
-  color: var(--clr-neutral-800);
-}
-
 .text-neutral-100 {
   color: var(--clr-neutral-100);
 }
+.text-neutral-200 {
+  color: var(--clr-neutral-200);
+}
+.text-neutral-300 {
+  color: var(--clr-neutral-300);
+}
 .text-neutral-400 {
   color: var(--clr-neutral-400);
 }
-.text-neutral-800 {
-  color: var(--clr-neutral-800);
+.text-neutral-500 {
+  color: var(--clr-neutral-500);
 }
-.text-neutral-900 {
-  color: var(--clr-neutral-900);
+.text-neutral-600 {
+  color: var(--clr-neutral-600);
 }
 
 .text-gray-50 {
@@ -450,23 +457,8 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 /** Utility - Background Colours **/
-.bg-primary-200 {
-  background-color: var(--clr-primary-200);
-}
-.bg-primary-300 {
-  background-color: var(--clr-primary-300);
-}
 .bg-primary-400 {
   background-color: var(--clr-primary-400);
-}
-.bg-primary-500 {
-  background-color: var(--clr-primary-500);
-}
-.bg-primary-600 {
-  background-color: var(--clr-primary-600);
-}
-.bg-primary-700 {
-  background-color: var(--clr-primary-700);
 }
 
 .bg-secondary-400 {
@@ -480,17 +472,23 @@ a:where(:hover, :focus, :focus-visible) {
 .bg-neutral-50 {
   background-color: var(--clr-neutral-50);
 }
+.bg-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
 .bg-neutral-200 {
   background-color: var(--clr-neutral-200);
+}
+.bg-neutral-300 {
+  background-color: var(--clr-neutral-300);
 }
 .bg-neutral-400 {
   background-color: var(--clr-neutral-400);
 }
+.bg-neutral-500 {
+  background-color: var(--clr-neutral-500);
+}
 .bg-neutral-600 {
   background-color: var(--clr-neutral-600);
-}
-.bg-neutral-800 {
-  background-color: var(--clr-neutral-800);
 }
 
 .bg-gray-50 {
