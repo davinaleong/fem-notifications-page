@@ -368,6 +368,11 @@ a:where(:hover, :focus, :focus-visible) {
   }
 }
 
+.card-body {
+  display: grid;
+  gap: 1em;
+}
+
 /** Content - End **/
 
 /** Utility **/
