@@ -130,6 +130,7 @@ body {
   font-size: var(--fz-base);
   font-family: var(--ff-body);
   font-weight: var(--fw-medium);
+  padding: var(--size-v-600);
   min-height: 100vh;
 }
 
@@ -348,6 +349,7 @@ a:where(:hover, :focus, :focus-visible) {
   width: min(100%, var(--card-width));
   min-height: var(--card-height);
   padding: var(--size-v-400);
+  margin-inline: auto;
   border-radius: var(--size-v-200);
   background-color: var(--clr-neutral-50);
 }
@@ -390,27 +392,24 @@ a:where(:hover, :focus, :focus-visible) {
 }
 
 .notification {
-  --notification-bg-clr: var(--clr-neutral-50);
+  --notification-bg-clr: var(--clr-neutral-100);
 
   display: grid;
   grid-template-columns: 3rem auto;
   grid-template-rows: repeat(2, max-content);
   gap: var(--size-v-400);
   background-color: var(--notification-bg-clr);
-  padding: var(--size-v-400);
+  position: relative;
+  padding: var(--size-v-400) var(--size-v-400) var(--size-v-400) var(--size-v-400);
   border-radius: var(--size-v-200);
 }
 
-.notification[data-read="false"] {
-  position: relative;
-  padding-right: var(--size-v-400);
-}
-
 .notification[data-read="true"] {
-  --notification-bg-clr: var(--clr-neutral-100);
+  --notification-bg-clr: var(--clr-neutral-50);
 }
 
 .notification[data-image="true"] {
+
   grid-template-columns: 3rem auto 3rem;
 }
 

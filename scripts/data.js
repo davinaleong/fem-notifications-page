@@ -66,6 +66,7 @@ const notifications = [
       description: "",
       image: "",
     },
+    sender: profiles.markWebber
   },
   {
     read: 0,
@@ -76,6 +77,7 @@ const notifications = [
       description: "",
       image: "",
     },
+    sender: profiles.angelaGray
   },
   {
     read: 0,
@@ -86,6 +88,7 @@ const notifications = [
       description: "",
       image: "",
     },
+    sender: profiles.jacobThompson
   },
   {
     read: 1,
@@ -97,6 +100,7 @@ const notifications = [
         "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
       image: "",
     },
+    sender: profiles.rizkyHasanuddin
   },
   {
     read: 1,
@@ -107,6 +111,7 @@ const notifications = [
       description: "",
       image: "./../images/image-chess.webp",
     },
+    sender: profiles.kimberlySmith
   },
   {
     read: 1,
@@ -117,6 +122,7 @@ const notifications = [
       description: "",
       image: "",
     },
+    sender: profiles.nathanPeterson
   },
   {
     read: 1,
@@ -127,5 +133,6 @@ const notifications = [
       description: "",
       image: "",
     },
+    sender: profiles.annaKim
   },
 ]
