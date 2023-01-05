@@ -60,6 +60,7 @@ const notifications = [
   {
     read: 0,
     type: notificationTypes.reaction,
+    date: "1m ago",
     content: {
       title: "My first tournament today!",
       description: "",
@@ -69,6 +70,7 @@ const notifications = [
   {
     read: 0,
     type: notificationTypes.following,
+    date: "5m ago",
     content: {
       title: "",
       description: "",
@@ -78,6 +80,7 @@ const notifications = [
   {
     read: 0,
     type: notificationTypes.joinedGroup,
+    date: "1day ago",
     content: {
       title: "Chess Club",
       description: "",
@@ -87,6 +90,7 @@ const notifications = [
   {
     read: 1,
     type: notificationTypes.privateMessage,
+    date: "5days ago",
     content: {
       title: "",
       description:
@@ -97,6 +101,7 @@ const notifications = [
   {
     read: 1,
     type: notificationTypes.comment,
+    date: "1week ago",
     content: {
       title: "",
       description: "",
@@ -106,6 +111,7 @@ const notifications = [
   {
     read: 1,
     type: notificationTypes.reaction,
+    date: "2weeks ago",
     content: {
       title: "5 end-game strategies to increase your win rate",
       description: "",
@@ -115,6 +121,7 @@ const notifications = [
   {
     read: 1,
     type: notificationTypes.leftGroup,
+    date: "2weeks ago",
     content: {
       title: "Chess Club",
       description: "",

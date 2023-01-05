@@ -217,10 +217,26 @@ a {
   color: var(--clr-link);
   font-weight: var(--fw-bold);
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 a:where(:hover, :focus, :focus-visible) {
   color: var(--clr-hover-link);
+}
+
+.link-user {
+  --clr-link: var(--clr-neutral-600);
+  --clr-hover-link: var(--clr-secondary-400);
+}
+
+.link-notification {
+  --clr-link: var(--clr-neutral-500);
+  --clr-hover-link: var(--clr-secondary-400);
+}
+
+.link-group {
+  --clr-link: var(--clr-secondary-400);
+  --clr-hover-link: var(--clr-secondary-400);
 }
 
 .attribution {
@@ -370,7 +386,74 @@ a:where(:hover, :focus, :focus-visible) {
 
 .card-body {
   display: grid;
-  gap: 1em;
+  gap: 2em;
+}
+
+.notification {
+  --notification-bg-clr: var(--clr-neutral-50);
+
+  display: grid;
+  grid-template-columns: 3rem auto;
+  grid-template-rows: repeat(2, max-content);
+  gap: var(--size-v-400);
+  background-color: var(--notification-bg-clr);
+  padding: var(--size-v-400);
+  border-radius: var(--size-v-200);
+}
+
+.notification[data-read="false"] {
+  position: relative;
+  padding-right: var(--size-v-400);
+}
+
+.notification[data-read="true"] {
+  --notification-bg-clr: var(--clr-neutral-100);
+}
+
+.notification[data-image="true"] {
+  grid-template-columns: 3rem auto 3rem;
+}
+
+.notification__heading {
+  align-self: center;
+}
+
+.notification__heading__title {
+  display: flex;
+  align-items: center;
+  gap: var(--size-v-100);
+}
+
+.notification[data-read="false"] .notification__heading__title::after {
+  --notification-indicator-size: var(--size-v-200);
+
+  content: "";
+  display: inline-block;
+  width: var(--notification-indicator-size);
+  height: var(--notification-indicator-size);
+  background-color: var(--clr-primary-400);
+  border-radius: 50%;
+  margin-left: var(--size-v-50);
+}
+
+.notification__image {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.notification__content {
+  grid-column: 2 / 3;
+  grid-row: 2;
+  border: thin solid var(--clr-neutral-300);
+  padding: var(--size-v-400);
+  border-radius: var(--size-v-100);
+  background-color: var(--clr-neutral-50);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.notification__content:hover {
+  background-color: var(--clr-neutral-200);
 }
 
 /** Content - End **/

@@ -25,11 +25,11 @@
 
     <script defer src="./scripts/main.js"></script>
   </head>
-  <body class="body-grid | text-neutral-600 bg-neutral-100">
+  <body class="body-grid | text-neutral-500 bg-neutral-100">
     <main class="card">
       <header class="card-header | m-v-b-400">
         <div class="notifications-heading">
-          <h1 class="fz-600 fw-bold">Notifications</h1>
+          <h1 class="text-neutral-600 fz-600 fw-bold">Notifications</h1>
           <div class="badge" data-element="badge">3</div>
         </div>
         <button class="btn btn-link" type="button" data-element="btn-mark-read">Mark all as read</button>
@@ -37,22 +37,33 @@
 
       <div class="card-body" data-element="card-body">
         <div class="notification" data-read="false">
-          <img src="./images/avatar-angela-gray.webp" alt="" class="notification__avatar">
-          <div class="notification__title">
-            <strong>Mark Webber</strong> reacted tp your recent post <a href="#">My first tournament today!</a>
+          <div class="notification__avatar">
+            <img src="./images/avatar-angela-gray.webp" alt="">
           </div>
-          <img src="./images/image-chess.webp" alt="" class="notification__image">
+          <div class="notification__heading">
+            <p class="notification__heading__title">
+              <a href="#" class="link-user">Mark Webber</a> reacted to your recent post <a href="#" class="link-notification">My first tournament today!</a>
+            </p>
+            <p class="notification__heading__date">1m ago</p>
+          </div>
           <div class="notification__content">
             <p>Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.</p>
           </div>
         </div>
 
-        <div class="notification" data-read="true">
-          <img src="./images/avatar-angela-gray.webp" alt="" class="notification__avatar">
-          <div class="notification__title">
-            <strong>Mark Webber</strong> reacted tp your recent post <a href="#">My first tournament today!</a>
+        <div class="notification" data-image="true" data-read="true">
+          <div class="notification__avatar">
+            <img src="./images/avatar-angela-gray.webp" alt="">
           </div>
-          <img src="./images/image-chess.webp" alt="" class="notification__image">
+          <div class="notification__heading">
+            <p class="notification__heading__title">
+              <a href="#" class="link-user">Mark Webber</a> reacted to your recent post <a href="#" class="link-group">My first tournament today!</a>
+            </p>
+            <p class="notification__heading__date">1m ago</p>
+          </div>
+          <div class="notification__image">
+            <img src="./images/image-chess.webp" alt="">
+          </div>
           <div class="notification__content">
             <p>Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.</p>
           </div>
