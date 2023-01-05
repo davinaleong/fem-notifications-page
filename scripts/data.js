@@ -57,5 +57,68 @@ const notificationTypes = {
 }
 
 const notifications = [
-  //
+  {
+    read: 0,
+    type: notificationTypes.reaction,
+    content: {
+      title: "My first tournament today!",
+      description: "",
+      image: "",
+    },
+  },
+  {
+    read: 0,
+    type: notificationTypes.following,
+    content: {
+      title: "",
+      description: "",
+      image: "",
+    },
+  },
+  {
+    read: 0,
+    type: notificationTypes.joinedGroup,
+    content: {
+      title: "Chess Club",
+      description: "",
+      image: "",
+    },
+  },
+  {
+    read: 1,
+    type: notificationTypes.privateMessage,
+    content: {
+      title: "",
+      description:
+        "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
+      image: "",
+    },
+  },
+  {
+    read: 1,
+    type: notificationTypes.comment,
+    content: {
+      title: "",
+      description: "",
+      image: "./../images/image-chess.webp",
+    },
+  },
+  {
+    read: 1,
+    type: notificationTypes.reaction,
+    content: {
+      title: "5 end-game strategies to increase your win rate",
+      description: "",
+      image: "",
+    },
+  },
+  {
+    read: 1,
+    type: notificationTypes.leftGroup,
+    content: {
+      title: "Chess Club",
+      description: "",
+      image: "",
+    },
+  },
 ]
