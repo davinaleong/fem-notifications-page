@@ -58,7 +58,7 @@ const notificationTypes = {
 
 const notifications = [
   {
-    read: 0,
+    read: false,
     type: notificationTypes.reaction,
     date: "1m ago",
     content: {
@@ -69,7 +69,7 @@ const notifications = [
     sender: profiles.markWebber
   },
   {
-    read: 0,
+    read: false,
     type: notificationTypes.following,
     date: "5m ago",
     content: {
@@ -80,7 +80,7 @@ const notifications = [
     sender: profiles.angelaGray
   },
   {
-    read: 0,
+    read: false,
     type: notificationTypes.joinedGroup,
     date: "1day ago",
     content: {
@@ -91,7 +91,7 @@ const notifications = [
     sender: profiles.jacobThompson
   },
   {
-    read: 1,
+    read: true,
     type: notificationTypes.privateMessage,
     date: "5days ago",
     content: {
@@ -103,7 +103,7 @@ const notifications = [
     sender: profiles.rizkyHasanuddin
   },
   {
-    read: 1,
+    read: true,
     type: notificationTypes.comment,
     date: "1week ago",
     content: {
@@ -114,7 +114,7 @@ const notifications = [
     sender: profiles.kimberlySmith
   },
   {
-    read: 1,
+    read: true,
     type: notificationTypes.reaction,
     date: "2weeks ago",
     content: {
@@ -125,7 +125,7 @@ const notifications = [
     sender: profiles.nathanPeterson
   },
   {
-    read: 1,
+    read: true,
     type: notificationTypes.leftGroup,
     date: "2weeks ago",
     content: {
